@@ -1,0 +1,140 @@
+/* Сучасні CSS змінні для ідеального скла */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.25);
+            --glass-blur: blur(16px);
+            --text-color: #ffffff;
+            --content-width: 580px; /* Комфортна ширина для читання */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff007f, #7f00ff);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: var(--text-color);
+            padding: 50px 20px;
+            
+            /* Шикування всього контенту строго по центру в один стовпчик */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px; 
+        }
+
+        /* Кастомний курсор-котик для всіх скляних елементів та посилань */
+        .glass-project-card:hover, .menu-link:hover, header img:hover {
+            cursor: url('https://img.icons8.com/fluency/32/cat.png') 16 16, pointer;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .zaholovok {
+            font-size: 42px;
+            margin: 0;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header img {
+            max-width: 160px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        header img:hover {
+            transform: scale(1.1) rotate(5deg); /* Гіфка трохи грає при наведенні */
+        }
+
+        main {
+            width: 100%;
+            max-width: var(--content-width);
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* Відступи між скляними блоками */
+        }
+
+        /* Великі преміальні скляні блоки для проєктів */
+        .glass-project-card {
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: 28px; /* Красиві круглі кути */
+            padding: 35px;
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Ефект наведення на блок: піднімається та м'яко світиться рожевим неоном */
+        .glass-project-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 0, 127, 0.4);
+            box-shadow: 0 15px 45px 0 rgba(255, 0, 127, 0.3);
+        }
+
+        /* Назви проєктів всередині блоків */
+        .project-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Описи проєктів */
+        .project-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 10px 0;
+            opacity: 0.85;
+        }
+
+        /* Осучаснена велика скляна кнопка всередині блоку */
+        .menu-link {
+            display: inline-block;
+            width: 100%;
+            max-width: 80%;
+            padding: 16px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px; /* Кнопка-овал всередині картки */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Ефект при наведенні безпосередньо на кнопку */
+        .menu-link:hover {
+            background: #ffffff;
+            color: #7f00ff; /* Текст стає фіолетовим на білому фоні */
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            transform: scale(1.03);
+        }
+        
+        .menu-link:active {
+            transform: scale(0.98); /* Ефект натискання */
+        }
+
